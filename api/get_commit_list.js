@@ -5,12 +5,12 @@ export default function handler(req, res) {
     let response = [];
     if (typeof (creator) != "undefined") {
         response = db.Commit.filter(x => {
-            x.creator === creator
+            return x.creator === creator;
         })
     }
     if (typeof (assigned) != "undefined") {
         response = db.Commit.filter(x => {
-            x.assigned === assigned
+            return x.assigned === assigned;
         })
     }
     return res.json(response);
