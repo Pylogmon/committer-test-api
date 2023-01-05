@@ -9,7 +9,7 @@ const handler = (req, res) => {
             const user = db.User.filter(x => {
                 return x.user_name == user_name;
             })
-            if (length(user) != 0) {
+            if (user.length != 0) {
                 if (user[0].password == password) {
                     return res.json(user[0]);
                 }
