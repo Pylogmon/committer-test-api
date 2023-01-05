@@ -6,6 +6,7 @@ export default function handler(req, res) {
     console.log("assigned", assigned)
     if (typeof (creator) != "undefined") {
         var response = db.Commit.filter(x => {
+            console.log("creator:", x.creator, x.creator === creator)
             return x.creator === creator;
         })
         console.log(response)
