@@ -7,14 +7,14 @@ export default function handler(req, res) {
     if (typeof (creator) != "undefined") {
         var response = db.Commit.filter(x => {
             console.log("creator:", x.creator, x.creator === creator)
-            return x.creator === creator;
+            return x.creator === Number(creator);
         })
         console.log(response)
         return res.json(response);
     }
     if (typeof (assigned) != "undefined") {
         var response = db.Commit.filter(x => {
-            return x.assigned === assigned;
+            return x.assigned === Number(assigned);
         })
         console.log(response)
         return res.json(response);
