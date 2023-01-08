@@ -24,7 +24,7 @@ const apis = [
         path: '/api/committer/get_project_list',
         name: '获取项目列表',
         params: {
-            product: '产品id'
+            product_id: '产品id'
         }
     },
     {
@@ -32,8 +32,8 @@ const apis = [
         path: '/api/committer/get_module_list',
         name: '获取模块列表',
         params: {
-            product: '产品id',
-            project: '项目id'
+            product_id: '产品id',
+            project_id: '项目id'
         }
     },
     {
@@ -41,9 +41,9 @@ const apis = [
         path: '/api/committer/get_branch_list',
         name: '获取分支列表',
         params: {
-            product: '产品id',
-            project: '项目id',
-            module: '模块id'
+            product_id: '产品id',
+            project_id: '项目id',
+            module_id: '模块id'
         }
     },
     {

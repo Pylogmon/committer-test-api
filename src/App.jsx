@@ -11,11 +11,11 @@ export default function App() {
   const page = useRoutes(routes);
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider theme='light' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+    <Layout>
+      <Sider style={{ overflow: 'auto', position: 'fixed', height: '100vh' }} theme='light'>
         <SideBar />
       </Sider>
-      <Layout>
+      <Layout style={{ marginLeft: '200px' }}>
         <Content>{page}</Content>
       </Layout>
     </Layout>
