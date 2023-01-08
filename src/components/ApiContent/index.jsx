@@ -38,7 +38,7 @@ export default function ApiContent(props) {
                         Object.keys(params).map(x => {
                             return (
                                 <Col key={nanoid()} xs={24}>
-                                    <Input placeholder={x} onChange={v => { myParams[x] = v }} />
+                                    <Input placeholder={x} onChange={e => { myParams[x] = e.target.value }} />
                                 </Col>
                             )
                         })
@@ -64,7 +64,7 @@ export default function ApiContent(props) {
                         Object.keys(data).map(x => {
                             return (
                                 <Col key={nanoid()} xs={24}>
-                                    <Input placeholder={x} onChange={v => { myData[x] = v }} />
+                                    <Input placeholder={x} onChange={e => { myData[x] = e.target.value }} />
                                 </Col>
                             )
                         })
@@ -79,7 +79,7 @@ export default function ApiContent(props) {
             url: path,
             params: myParams,
             data: myData
-        }).then(res => { setRes(res.data) }, err => { setRes(err.message) })
+        }).then(res => { setRes(JSON.stringify(res.data)) }, err => { setRes(err.message) })
     }
     return (
         <Collapse>
