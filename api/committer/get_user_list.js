@@ -3,7 +3,7 @@ import cors from "./utils/cors";
 
 
 const handler = (_, res) => {
-    const user_list = db.User.map(x => { delete x.password });
+    const user_list = db.User.map(x => { delete x.password; return x });
     return res.json(user_list);
 }
 
